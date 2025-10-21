@@ -1,3 +1,4 @@
+import { Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
 
@@ -11,12 +12,27 @@ const Box = (props) => {
         justifyContent: "center",
         flexDirection: "column",
         width: "40%",
-        border: "4px solid black",
+        border: "10px solid black",
+        backgroundColor: "white",
+        gap: 3,
+        p: 3,
       }}
     >
-      <h1>{props.player}</h1>
-      <img src={props.select && props.select.img} />
-      <p>win</p>
+      <Typography variant="h3" sx={{ color: "black", fontWeight: "bold" }}>
+        {props.player}
+      </Typography>
+      <img
+        src={props.select && props.select.img}
+        style={{
+          width: "fit-content",
+          height: "auto",
+          maxWidth: "100%",
+          objectFit: "contain",
+        }}
+      />
+      <Typography variant="h5" sx={{ color: "black" }}>
+        win
+      </Typography>
     </Container>
   );
 };

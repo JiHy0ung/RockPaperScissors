@@ -44,11 +44,47 @@ function App() {
           display: "flex",
           alignContent: "center",
           justifyContent: "center",
+          boxShadow: "none",
         }}
       >
-        <Button onClick={() => play("scissors")}>가위</Button>
-        <Button onClick={() => play("rock")}>바위</Button>
-        <Button onClick={() => play("paper")}>보</Button>
+        <Button
+          sx={{
+            backgroundColor: "white",
+            color: "black",
+            borderColor: "black",
+            outline: "none",
+            border: "1px solid white",
+          }}
+          onClick={() => play("scissors")}
+        >
+          가위
+        </Button>
+        <Button
+          sx={{
+            backgroundColor: "white",
+            color: "black",
+            borderColor: "black",
+            outline: "none",
+
+            border: "1px solid white",
+          }}
+          onClick={() => play("rock")}
+        >
+          바위
+        </Button>
+        <Button
+          sx={{
+            backgroundColor: "white",
+            color: "black",
+            borderColor: "black",
+            outline: "none",
+
+            border: "1px solid white",
+          }}
+          onClick={() => play("paper")}
+        >
+          보
+        </Button>
       </ButtonGroup>
     </Container>
   );
