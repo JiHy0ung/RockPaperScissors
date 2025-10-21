@@ -3,7 +3,10 @@ import { Container } from "@mui/system";
 import React from "react";
 
 const Box = (props) => {
-  console.log(props);
+  const defaultImg = "/question_mark.png";
+
+  const imageSrc = props.select ? props.select.img : defaultImg;
+
   return (
     <Container
       sx={{
@@ -18,11 +21,20 @@ const Box = (props) => {
         p: 3,
       }}
     >
-      <Typography variant="h3" sx={{ color: "black", fontWeight: "bold" }}>
+      <Typography
+        sx={{
+          display: "flex",
+          alignContent: "center",
+          justifyContent: "center",
+          color: "black",
+          fontWeight: "bold",
+          fontSize: { xs: "1rem", sm: "1.5rem", md: "2.5rem" },
+        }}
+      >
         {props.player}
       </Typography>
       <img
-        src={props.select && props.select.img}
+        src={imageSrc}
         style={{
           width: "fit-content",
           height: "auto",
