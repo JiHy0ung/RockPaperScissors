@@ -5,9 +5,9 @@ import { Button, ButtonGroup } from "@mui/material";
 import { useState } from "react";
 
 const choice = {
-  rock: { name: "Rock", img: "src/assets/rock.png" },
-  scissors: { name: "Scissors", img: "src/assets/scissors.png" },
-  paper: { name: "Paper", img: "src/assets/paper.png" },
+  rock: { name: "Rock", img: "/rock.png" },
+  scissors: { name: "Scissors", img: "/scissors.png" },
+  paper: { name: "Paper", img: "/paper.png" },
 };
 
 function App() {
