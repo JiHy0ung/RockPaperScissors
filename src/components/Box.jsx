@@ -7,15 +7,37 @@ const Box = (props) => {
 
   const imageSrc = props.select ? props.select.img : defaultImg;
 
+  let result;
+
+  if (
+    props.player === "Computer" &&
+    !(props.result === "Tie") &&
+    !(props.result === "")
+  ) {
+    if (props.result === "Win") {
+      result = "Lose";
+    } else if (props.result === "Lose") {
+      result = "Win";
+    }
+  } else {
+    result = props.result;
+  }
+
+  let borderColor;
+  if (result === "Win") borderColor = "green";
+  else if (result === "Lose") borderColor = "red";
+  else if (result === "Tie") borderColor = "gray";
+  else borderColor = "black";
+
   return (
     <Container
       sx={{
         display: "flex",
-        alignContent: "center",
+        alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
         width: "40%",
-        border: "10px solid black",
+        border: `10px solid ${borderColor}`,
         backgroundColor: "white",
         gap: 3,
         p: 3,
@@ -24,7 +46,7 @@ const Box = (props) => {
       <Typography
         sx={{
           display: "flex",
-          alignContent: "center",
+          alignItems: "center",
           justifyContent: "center",
           color: "black",
           fontWeight: "bold",
@@ -43,7 +65,7 @@ const Box = (props) => {
         }}
       />
       <Typography variant="h5" sx={{ color: "black" }}>
-        win
+        {result}
       </Typography>
     </Container>
   );
