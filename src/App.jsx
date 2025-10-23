@@ -71,46 +71,18 @@ function App() {
           alignItems: "center",
           justifyContent: "center",
           boxShadow: "none",
+          "& .MuiButton-root": {
+            backgroundColor: "white",
+            color: "black",
+            border: "1px solid black",
+            outline: "none",
+            "&:hover": { backgroundColor: "#f0f0f0" },
+          },
         }}
       >
-        <Button
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-            borderColor: "black",
-            outline: "none",
-            border: "1px solid white",
-          }}
-          onClick={() => play("scissors")}
-        >
-          가위
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-            borderColor: "black",
-            outline: "none",
-
-            border: "1px solid white",
-          }}
-          onClick={() => play("rock")}
-        >
-          바위
-        </Button>
-        <Button
-          sx={{
-            backgroundColor: "white",
-            color: "black",
-            borderColor: "black",
-            outline: "none",
-
-            border: "1px solid white",
-          }}
-          onClick={() => play("paper")}
-        >
-          보
-        </Button>
+        <Button onClick={() => play("scissors")}>가위</Button>
+        <Button onClick={() => play("rock")}>바위</Button>
+        <Button onClick={() => play("paper")}>보</Button>
       </ButtonGroup>
     </Container>
   );
